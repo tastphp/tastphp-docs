@@ -1,8 +1,8 @@
 # 第一个hello word
 
+执行如下命令
 
-
-执行 php -S 127.0.0.1:9999 web/index.php
+> php -S 127.0.0.1:9999 web/index.php
 
 打开浏览器，输入 127.0.0.1:9999
 
