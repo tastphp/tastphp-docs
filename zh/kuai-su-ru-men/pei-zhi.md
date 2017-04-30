@@ -4,10 +4,12 @@
 
 ```
 ├── config
+│   ├── config.yml
 │   ├── example.app.yml
 │   ├── example.dbs.yml
 │   ├── example.migrations-db.php
 │   ├── example.parameters.yml
+│   ├── migrations.yml
 │   ├── routes.yml
 │   └── routes_test.yml
 ```
