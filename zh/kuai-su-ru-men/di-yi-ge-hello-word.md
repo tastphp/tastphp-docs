@@ -8,7 +8,7 @@
 
 出现如下界面，表示成功。
 
-![](/assets/WX20170430-144948.png)
+![](blob:https://www.gitbook.com/f59dcd51-bb0a-4e04-88d6-f709d4ba2ad8)
 
 
 
