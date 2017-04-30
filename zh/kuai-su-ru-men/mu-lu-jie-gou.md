@@ -11,14 +11,12 @@
 ├── composer.json
 ├── composer.lock
 ├── config
-│   ├── app.yml
 │   ├── config.yml
 │   ├── example.app.yml
 │   ├── example.dbs.yml
 │   ├── example.migrations-db.php
 │   ├── example.parameters.yml
 │   ├── migrations.yml
-│   ├── parameters.yml
 │   ├── routes.yml
 │   └── routes_test.yml
 ├── docs
