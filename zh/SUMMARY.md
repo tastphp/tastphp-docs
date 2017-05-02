@@ -16,4 +16,13 @@
   * Responses
   * views
   * 日志
+* [其他组件](qi-ta-zu-jian.md)
+  * 命令行
+  * 缓存
+  * 事件
+  * 消息队列
+* [数据库相关](shu-ju-ku-xiang-guan.md)
+* cookbook
+* 测试
+* 最佳实践
 
