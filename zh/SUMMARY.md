@@ -15,7 +15,7 @@
   * [Requests](ji-ben-zu-jian/requests.md)
   * [Responses](ji-ben-zu-jian/responses.md)
   * [views](ji-ben-zu-jian/views.md)
-  * 日志
+  * [日志](ji-ben-zu-jian/ri-zhi.md)
 * [其他组件](qi-ta-zu-jian.md)
   * 命令行
   * 缓存
