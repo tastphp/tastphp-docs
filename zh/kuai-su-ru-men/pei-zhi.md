@@ -1,6 +1,6 @@
 # 配置
 
-> Tastphp采用[Yaml](http://symfony.com/doc/current/components/yaml.html)写配置文件。YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。
+> Tastphp优先采用[Yaml](http://symfony.com/doc/current/components/yaml.html)写配置文件,少量用php。YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。
 
 ### 项目配置目录如下
 
