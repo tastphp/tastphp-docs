@@ -14,7 +14,7 @@
   * [Controllers](ji-ben-zu-jian/controllers.md)
   * [Requests](ji-ben-zu-jian/requests.md)
   * [Responses](ji-ben-zu-jian/responses.md)
-  * views
+  * [views](ji-ben-zu-jian/views.md)
   * 日志
 * [其他组件](qi-ta-zu-jian.md)
   * 命令行
