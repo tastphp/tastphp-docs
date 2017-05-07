@@ -32,7 +32,7 @@ home:
   
   * methods  表示用什么请求的方法
   
-  * routeName 表示路由名称
+  * routeName 表示路由名称
 
 
 
