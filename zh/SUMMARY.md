@@ -8,7 +8,7 @@
   * [配置](kuai-su-ru-men/pei-zhi.md)
   * [第一个hello word](kuai-su-ru-men/di-yi-ge-hello-word.md)
 * [基本组件](ji-ben-zu-jian.md)
-  * 路由
+  * [路由](ji-ben-zu-jian/lu-you.md)
   * 中间件
   * CSRF
   * Controllers
