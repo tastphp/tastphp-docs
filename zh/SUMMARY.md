@@ -13,7 +13,7 @@
   * [CSRF](ji-ben-zu-jian/csrf.md)
   * [Controllers](ji-ben-zu-jian/controllers.md)
   * [Requests](ji-ben-zu-jian/requests.md)
-  * Responses
+  * [Responses](ji-ben-zu-jian/responses.md)
   * views
   * 日志
 * [其他组件](qi-ta-zu-jian.md)
