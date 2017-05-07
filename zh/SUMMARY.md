@@ -11,7 +11,7 @@
   * [路由](ji-ben-zu-jian/lu-you.md)
   * [中间件](ji-ben-zu-jian/zhong-jian-jian.md)
   * [CSRF](ji-ben-zu-jian/csrf.md)
-  * Controllers
+  * [Controllers](ji-ben-zu-jian/controllers.md)
   * Requests
   * Responses
   * views
