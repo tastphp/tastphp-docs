@@ -1,4 +1,4 @@
-# **安装**
+# **安装** （对linux、MacOS用户友好）
 
 ### 几个必要条件：
 
@@ -6,6 +6,8 @@
 * 已经安装composer
 * 安装php的redis扩展
 * 安装php的zip扩展
+* 安装git
+* 安装wget
 
 #### 使用 tastphp installer 安装
 
@@ -27,7 +29,6 @@ $ php tastphp install
 
 
 ### 方式2 (shell方式)
-
 
 ```
 $ git clone https://github.com/tastphp/tastphp-installer.git
