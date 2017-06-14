@@ -37,7 +37,7 @@ $ git clone https://github.com/tastphp/tastphp-installer.git
 
 $ cd tastphp-installer
 
-$ chmod +x bin/tastphp
+$ chmod +x bin/tastphp.sh
 
 $ ./bin/tastphp.sh
 ```
