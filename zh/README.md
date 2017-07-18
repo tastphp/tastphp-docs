@@ -27,3 +27,8 @@ Tastphp取之于开源界，现在反馈给开源界。有什么不足以及建�
 ## 加群交流
 
 QQ群 628043345  欢迎交流~
+
+<img src="https://raw.githubusercontent.com/tastphp-lab/assets/master/imgs/tastphp-qq-qun.jpeg">
+
+
+
