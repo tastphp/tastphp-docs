@@ -1,6 +1,6 @@
 # 日志
 
-Tastphp日志组件是基于<a href="https://github.com/Seldaek/monolog" target="_blank">Monolog</a>
+Tastphp日志组件是基于[Monolog](https://github.com/Seldaek/monolog)
 
 
 ## 基本用法
