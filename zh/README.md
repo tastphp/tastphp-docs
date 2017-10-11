@@ -23,6 +23,8 @@ Tastphp取之于开源界，现在反馈给开源界。有什么不足以及建�
 * 命令行控制台
 * Debug Bar
 
+> 本文档源代码托管在github上:[源代码地址](https://github.com/tastphp/tastphp-docs)
+> , 你也可以直接源代码阅读本教程：[入口](https://github.com/tastphp/tastphp-docs/blob/master/zh/SUMMARY.md)
 
 ## 加群交流
 
