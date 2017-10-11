@@ -42,4 +42,8 @@ class HomeController extends Controller
 }
 ```
 
+### 3、测试结果
 
+> php -S 127.0.0.1:9999 web/index.php
+
+![](https://raw.githubusercontent.com/tastphp/tastphp-docs/master/assets/WX20170430-144948.png)
