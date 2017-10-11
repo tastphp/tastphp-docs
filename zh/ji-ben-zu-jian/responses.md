@@ -67,9 +67,9 @@ return new Response($content, $status, $headers);
 
 但是建议兼容PSR-7标准的接口。
 
-### jsonResponse
+### JsonResponse
 
-jsonResponse用法差不多
+JsonResponse用法差不多
 
 ```
  return new JsonResponse(['name1'=>'tastphp~',"name2"=>"tastphp!"]);
