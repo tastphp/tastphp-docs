@@ -18,7 +18,7 @@
   * [views](ji-ben-zu-jian/views.md)
   * [日志](ji-ben-zu-jian/ri-zhi.md)
 * [其他组件](qi-ta-zu-jian.md)
-  * [命令行](qi-ta-zu-jian/ming-ling-xing.md)
+  * [console控制台](qi-ta-zu-jian/ming-ling-xing.md)
   * [缓存](qi-ta-zu-jian/huan-cun.md)
   * [事件](qi-ta-zu-jian/shi-jian.md)
   * [消息队列](qi-ta-zu-jian/xiao-xi-dui-lie.md)
