@@ -9,7 +9,7 @@
    | | / _` |/ __|| __|| |_) || |_| || |_) |
    | || (_| |\__ \| |_ |  __/ |  _  ||  __/
    |_| \__,_||___/ \__||_|    |_| |_||_|
-                                             v1.3.2
+                                             v1.3.3
 
 Usage:
   command [options] [arguments]
@@ -101,3 +101,213 @@ src/App目录下多了一个Demo目录,Demo 目录里面多了几个文件。
 ```
 
 ### migrations 具体使用
+
+#### 生成空白的migration类，你会发现报错，如下
+```
+➜  tastphp-docs-demo git:(master) php bin/console migrations:generate
+
+
+  [InvalidArgumentException]
+  You have to specify a --db-configuration file or pass a Database Connection as a dependency to the Migrations.
+
+
+migrations:generate [--editor-cmd [EDITOR-CMD]] [--configuration [CONFIGURATION]] [--db-configuration [DB-CONFIGURATION]]
+```
+
+#### 解决：配置数据库
+
+```
+在主目录的config 文件下找到 config/example.migrations-db.php 
+
+执行cp config/example.migrations-db.php  config/migrations-db.php，也就是重新copy一份命名为migrations-db.php的php文件
+
+```
+
+内容如下：
+```
+<?php
+//demo change it
+return [
+    'dbname'   => 'tastphp_demo', //修改数据库
+    'user'     => 'root',  //修改数据库用户名
+    'password' => '123',   //修改数据库密码
+    'host'     => '127.0.0.1', //修改数据库host
+    'driver'   => 'pdo_mysql', //修改数据库驱动
+    'charset'   => 'utf8mb4' //修改数据库字符集
+];
+```
+
+这个时候再执行,发现成功了：
+
+```
+➜  tastphp-docs-demo git:(master) ✗ php bin/console migrations:generate
+Loading configuration from file: migrations.yml
+Generated new migration class to "/private/var/www/tastphp-docs-demo/migrations/Version20171016024937.php"
+```
+
+这个时候 migrations 目录下就有一个 `Version20171016024937.php` 文件了。
+
+你就可以编写迁移脚本了。
+这边举个例子创建一个user表，实际上你可以执行任务你自定义的SQL语句
+
+### 具体例子
+
+#### 1、准备的SQL
+
+```
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+```
+
+#### 2、打开刚才的文件 Version20171016024937.php
+
+ Version20171016024937.php 内容如下：
+
+```
+<?php
+
+namespace Migrations;
+
+use Doctrine\DBAL\Migrations\AbstractMigration;
+use Doctrine\DBAL\Schema\Schema;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+class Version20171016024937 extends AbstractMigration
+{
+    /**
+     * @param Schema $schema
+     */
+    public function up(Schema $schema)
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+
+    }
+
+    /**
+     * @param Schema $schema
+     */
+    public function down(Schema $schema)
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+
+    }
+}
+```
+
+在 up 的方法里面添加第一步准备的sql语句，最后变成：
+
+```
+<?php
+
+namespace Migrations;
+
+use Doctrine\DBAL\Migrations\AbstractMigration;
+use Doctrine\DBAL\Schema\Schema;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+class Version20171016024937 extends AbstractMigration
+{
+    /**
+     * @param Schema $schema
+     */
+    public function up(Schema $schema)
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->addSql("CREATE TABLE `user` (
+              `id` int(11) NOT NULL AUTO_INCREMENT,
+              `username` varchar(50) DEFAULT NULL,
+              `password` varchar(100) DEFAULT NULL,
+              PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;"
+        );
+    }
+
+    /**
+     * @param Schema $schema
+     */
+    public function down(Schema $schema)
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+
+    }
+}
+
+
+```
+查看 migrations的status：
+
+```
+➜  tastphp-docs-demo git:(master) ✗ php bin/console migrations:status
+Loading configuration from file: migrations.yml
+
+ == Configuration
+
+    >> Name:                                               DBAL Migrations
+    >> Database Driver:                                    pdo_mysql
+    >> Database Name:                                      tastphp_demo
+    >> Configuration Source:                               /private/var/www/tastphp-docs-demo/config/migrations.yml
+    >> Version Table Name:                                 migration_versions
+    >> Version Column Name:                                version
+    >> Migrations Namespace:                               Migrations
+    >> Migrations Directory:                               /private/var/www/tastphp-docs-demo/migrations
+    >> Previous Version:                                   Already at first version
+    >> Current Version:                                    0
+    >> Next Version:                                       2017-10-16 02:49:37 (20171016024937)
+    >> Latest Version:                                     2017-10-16 02:49:37 (20171016024937)
+    >> Executed Migrations:                                0
+    >> Executed Unavailable Migrations:                    0
+    >> Available Migrations:                               1
+    >> New Migrations:                                     1
+```
+
+执行`migrations:migrate`
+
+```
+➜  tastphp-docs-demo git:(master) ✗ php bin/console migrations:migrate
+Loading configuration from file: migrations.yml
+
+                    DBAL Migrations
+
+
+WARNING! You are about to execute a database migration that could result in schema changes and data lost. Are you sure you wish to continue? (y/n)
+Migrating up to 20171016024937 from 0
+
+  ++ migrating 20171016024937
+
+     -> CREATE TABLE `user` (
+              `id` int(11) NOT NULL AUTO_INCREMENT,
+              `username` varchar(50) DEFAULT NULL,
+              `password` varchar(100) DEFAULT NULL,
+              PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+  ++ migrated (0.11s)
+
+  ------------------------
+
+  ++ finished in 0.11s
+  ++ 1 migrations executed
+  ++ 1 sql queries
+ ```
+ 
+ 这个时候你的sql已经执行，检查下刚才定义的数据库`tastphp_demo` ,你会发现多了两个表 `user`、`migration_versions`
+ 
+ 其中`migration_versions`表是管理迁移脚本的版本。
+ 
+ ### 其他命令：
+ 
+ #### migrations:execute 版本号
+ 
+ ```
+ php bin/console  migrations:execute 20171016024937
+ ```
+ 
+ #### migrations:latest 输出最新版本号
