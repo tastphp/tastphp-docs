@@ -11,7 +11,7 @@
 <a href="https://packagist.org/packages/tast-php/tast-php"><img src="https://poser.pugx.org/tast-php/tast-php/license" alt="License"></a>
 </p>
 
-> Tastphp是一款现代化的框架，具备灵活、组件化、可拔插、扩展性强、高性能的特点。
+> Tastphp是一款现代化的PHP框架，具备灵活、组件化、可拔插、扩展性强、高性能的特点。
 
 ## 背景
 
