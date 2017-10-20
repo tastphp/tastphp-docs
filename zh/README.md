@@ -43,9 +43,8 @@ Tastphp取之于开源界，现在反馈给开源界。有什么不足以及建�
 
 <img src="https://raw.githubusercontent.com/xujiajun/php-framework-benchmark/master/imgs/php-framework-vs.png">
 
-----
 
-各个主流框架性能评测：https://github.com/xujiajun/php-framework-benchmark
+👉 各个主流框架性能评测：https://github.com/xujiajun/php-framework-benchmark
 
 
 > 本文档源代码托管在github上:[源代码地址](https://github.com/tastphp/tastphp-docs)
