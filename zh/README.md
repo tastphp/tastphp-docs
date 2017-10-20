@@ -1,4 +1,19 @@
-# Tastphp PHP Framework
+<p align="center">
+    <img height="70%" width="70%" src="https://raw.githubusercontent.com/tastphp-lab/assets/master/logo/tastphp-logo-big.png">
+</p>
+
+<p align="center">
+<a href="https://travis-ci.org/tastphp/tastphp"><img src="https://api.travis-ci.org/tastphp/tastphp.svg?branch=master" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/tastphp/tastphp"><img src="https://codeclimate.com/github/tastphp/tastphp/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://packagist.org/packages/tast-php/tast-php"><img src="https://poser.pugx.org/tast-php/tast-php/v/stable" alt="Latest Stable Version"></a>
+<a href="https://img.shields.io/badge/support-psr7-brightgreen.svg"><img src="https://img.shields.io/badge/support-psr7-brightgreen.svg" alt="License"></a>
+<a href="https://img.shields.io/badge/support-psr11-brightgreen.svg"><img src="https://img.shields.io/badge/support-psr11-brightgreen.svg" alt="License"></a>
+<a href="https://packagist.org/packages/tast-php/tast-php"><img src="https://poser.pugx.org/tast-php/tast-php/license" alt="License"></a>
+</p>
+
+> Tastphp是一款现代化的框架，具备灵活、组件化、可拔插、扩展性强、高性能的特点。
+
+## 背景
 
 PHP发展到现在，已经涌现出一大批优秀的框架，如Symfony、laravel等，而随着composer、psr 规范的出现。慢慢让PHP界开始有序，而不再一盘散沙似的重复造轮子。
 
@@ -13,13 +28,14 @@ Tastphp的产生也是在我司(杭州持码网络科技有限公司)内部孵�
 Tastphp取之于开源界，现在反馈给开源界。有什么不足以及建议。请帮一起改进。
 
 ## 特点
-
-* 依赖注入机制
+* 作为现代化框架，支持PSR2、PSR4、PSR7、PSR11
+* DI（依赖注入机制）
 * M（Service/Dao）VC 架构
 * 组件化
+* 高性能
 * 事件派发机制
 * 可扩展性高
-* mysql读写分离
+* 支持mysql读写分离
 * 命令行控制台
 * Debug Bar
 
