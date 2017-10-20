@@ -32,12 +32,21 @@ Tastphp取之于开源界，现在反馈给开源界。有什么不足以及建�
 * DI（依赖注入机制）
 * M（Service/Dao）VC 架构
 * 组件化
-* 高性能
+* [高性能](https://github.com/xujiajun/php-framework-benchmark)
 * 事件派发机制
 * 可扩展性高
 * 支持mysql读写分离
 * 命令行控制台
 * Debug Bar
+
+## 性能
+
+<img src="https://raw.githubusercontent.com/xujiajun/php-framework-benchmark/master/imgs/php-framework-vs.png">
+
+----
+
+各个主流框架性能评测：https://github.com/xujiajun/php-framework-benchmark
+
 
 > 本文档源代码托管在github上:[源代码地址](https://github.com/tastphp/tastphp-docs)
 > , 你也可以直接源代码阅读本教程：[入口](https://github.com/tastphp/tastphp-docs/blob/master/zh/SUMMARY.md)
