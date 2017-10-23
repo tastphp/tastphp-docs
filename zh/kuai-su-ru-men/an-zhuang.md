@@ -1,3 +1,5 @@
+[编辑本文](https://github.com/tastphp/tastphp-docs/edit/master/zh/kuai-su-ru-men/an-zhuang.md)
+
 # **安装**
 
 此教程对linux、MacOS用户友好
@@ -42,6 +44,11 @@ $ chmod +x bin/tastphp.sh
 $ ./bin/tastphp.sh
 ```
 
+### 方式3 （用conposer命令）
+
+```
+composer create-project  --prefer-dist tast-php/tast-php {your install directory} "1.3.6"
+```
 
 > tips: 如果发现composer很慢，国内用户建议使用[国内镜像](https://pkg.phpcomposer.com/)
 
