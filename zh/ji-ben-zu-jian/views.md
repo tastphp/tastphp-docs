@@ -18,10 +18,38 @@ xxx.html.twig //xxx是自定义的名字，如home.html.twig
 
 ## 例子
 
-### 1、View层，创建twig文件
+### 1、注册TwigService
+
+首页需要注册twigService到AppKernel，在`AppKernerl` 初始化的时候增加：
+
+```
+$this->registerTwigService();
+```
+
+最后变成类似:
+```
+<?php
+
+namespace TastPHP\App;
+
+use TastPHP\Framework\Event\AppEvent;
+use TastPHP\Framework\Kernel;
+use TastPHP\FrontBundle\Listener\MiddlewareListener;
+
+class AppKernel extends Kernel
+{
+    public function __construct(array $values = [])
+    {
+        $this->registerTwigService(); // 注册TwigService
+        parent::__construct($values);
+    }
+}
+```
+
+### 2、View层，创建twig文件
 在[tastphp-doc-demo](https://github.com/tastphp/tastphp-docs-demo)中,找到文件`tastphp-docs-demo/web/views/frontBundle/home/index.html.twig`
 
-### 2、Controller层，编写业务代码
+### 3、Controller层，编写业务代码
 
 在[tastphp-doc-demo](https://github.com/tastphp/tastphp-docs-demo)中,找到文件`tastphp-docs-demo/src/FrontBundle/Controller/HomeController.php`,改下内容类似：
 
@@ -42,7 +70,7 @@ class HomeController extends Controller
 }
 ```
 
-### 3、测试结果
+### 4、测试结果
 
 > php -S 127.0.0.1:9999 web/index.php
 
