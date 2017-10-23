@@ -44,7 +44,7 @@ $ chmod +x bin/tastphp.sh
 $ ./bin/tastphp.sh
 ```
 
-### 方式3 （用conposer命令）
+### 方式3 （用composer命令）
 
 ```
 composer create-project  --prefer-dist tast-php/tast-php {your install directory} "1.3.6"
