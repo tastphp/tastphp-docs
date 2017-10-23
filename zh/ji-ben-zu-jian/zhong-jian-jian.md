@@ -4,7 +4,7 @@
 
 ## 使用
 
-### 1、注册替换Appkernel的Middleware Listener
+### 1、注册Middleware Listener到Appkernel
 
 找到 src/App里面的 `AppKernel` 增加一行代码：
 
