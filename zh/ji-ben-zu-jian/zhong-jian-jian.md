@@ -7,11 +7,11 @@
 ### 1、注册替换Appkernel的Middleware Listener
 
 找到 src/App里面的 `AppKernel` 增加一行代码：
+
 ```
-$this->replaceListener(AppEvent::MIDDLEWARE,MiddlewareListener::class.'@onMiddlewareAction');
+$this->registerMiddlewareListener(MiddlewareListener::class, "onMiddlewareAction");
 ```
 
-最终变成如下：
 
 ```
 <?php
@@ -26,7 +26,7 @@ class AppKernel extends Kernel
 {
     public function __construct(array $values = [])
     {
-        $this->replaceListener(AppEvent::MIDDLEWARE,MiddlewareListener::class.'@onMiddlewareAction');
+        $this->registerMiddlewareListener(MiddlewareListener::class, "onMiddlewareAction");
         parent::__construct($values);
     }
 }
