@@ -30,7 +30,7 @@ home:
 
   * _controller 表示启用哪一个bundle下的控制器的Action
   
-  * methods  表示用什么请求的方法
+  * methods  表示用什么请求的方法 (支持GET、POST、PUT、DELETE 方法)
   
   * routeName 表示路由名称
 
