@@ -22,7 +22,38 @@ csrf.secret: tastphp.token #自己修改密钥
 csrf.ttl: 1440 #自己修改过期时间，默认1440s
 ```
 
-### 2、使用csrfToken组件
+### 2、AppKernel 注册csrfToken服务
+
+在 `AppKernel.php`文件 添加一行：
+
+```
+$this->registerCsrfTokenService();
+```
+
+最后变成类似：
+
+```
+<?php
+
+namespace TastPHP\App;
+
+use TastPHP\Framework\Event\AppEvent;
+use TastPHP\Framework\Kernel;
+use TastPHP\FrontBundle\Listener\MiddlewareListener;
+
+class AppKernel extends Kernel
+{
+    public function __construct(array $values = [])
+    {
+        $this->replaceListener(AppEvent::MIDDLEWARE,MiddlewareListener::class.'@onMiddlewareAction');
+        //        $this->registerMiddlewareListener(MiddlewareListener::class, "onMiddlewareAction");
+        $this->registerCsrfTokenService();
+        parent::__construct($values);
+    }
+}
+```
+
+### 3、使用csrfToken组件
 
 打开文件 `src/FrontBundle/Listener/MiddlewareListener.php`
 
