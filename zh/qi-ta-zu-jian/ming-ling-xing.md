@@ -9,7 +9,7 @@
    | | / _` |/ __|| __|| |_) || |_| || |_) |
    | || (_| |\__ \| |_ |  __/ |  _  ||  __/
    |_| \__,_||___/ \__||_|    |_| |_||_|
-                                             v1.3.3
+                                             v1.3.6
 
 Usage:
   command [options] [arguments]
@@ -26,6 +26,9 @@ Options:
 Available commands:
   help                    Displays help for a command
   list                    Lists commands
+ cache
+  cache:config            Cache config
+  cache:route             Cache route
  generate
   generate:bundle         Generates a bundle
   generate:entityService  Generates a entityService(Dao)
@@ -40,8 +43,26 @@ Available commands:
 ```
 ### 说明
 
+* cache 上线前执行，提高性能
 * generate 生成一些代码模板，方便快速开发
 * migrations 迁移数据库相关的操作
+
+### cache 具体使用
+
+#### 1、cache:config （缓存config）
+
+```
+➜  tastphp-docs-demo git:(master) ✗ php bin/console cache:config
+You have success cached config!
+```
+
+#### 2、cache:route （缓存route）
+
+```
+➜  tastphp-docs-demo git:(master) ✗ php bin/console cache:route
+You have success cached route!
+```
+
 
 ### generate 具体使用
 
