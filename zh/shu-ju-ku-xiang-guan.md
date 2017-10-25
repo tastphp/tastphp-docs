@@ -171,4 +171,4 @@ Current database: tastphp_demo
 
 发现多了一条记录，说明API执行成功！
 
-[下一节](https://github.com/tastphp/tastphp-docs/blob/master/zh/shu-ju-ku-xiang-guan/restful-api-crud.md)，我将带大家编写RESTFul风格的user API 完整的CRUD。
+[下一节](https://github.com/tastphp/tastphp-docs/blob/master/zh/shu-ju-ku-xiang-guan/restful-api-crud.md)，我将带你编写RESTFul风格的user API 完整的CRUD。
