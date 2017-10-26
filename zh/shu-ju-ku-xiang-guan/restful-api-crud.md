@@ -45,6 +45,55 @@ PUT /user/update
 
 ### 2、查看user
 
+#### 2.1 配置路由
+
+```
+user_get:
+      pattern: /user/{id}
+      parameters:
+        _controller: Front@User::get
+        methods:  [GET]
+        routeName: user_get
+        id: \d+
+```
+
+#### 2.2 添加方法
+
+在`UserController.php` 的类中增加方法：
+
+```
+    public function getAction($id)
+    {
+        $result = $this->getUserService()->getUser($id);
+        if ($result) {
+            dump($result);
+        }
+    }
+```
+
+#### 2.3 测试API
+
+```
+➜  tastphp-docs-demo git:(master) ✗ http -f GET http://tastphp-doc-demo.dev/user/1
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 26 Oct 2017 04:44:40 GMT
+Server: nginx/1.12.0
+Transfer-Encoding: chunked
+X-Powered-By: PHP/7.1.10
+
+array(3) {
+  ["id"]=>
+  string(1) "1"
+  ["username"]=>
+  string(12) "tastphp_user"
+  ["password"]=>
+  string(60) "$2y$10$vo/YQTbO/oHmedoDac2NHOnbvBRjITxI3kXPbEvoEn0hFhdIa/yxK"
+}
+```
+
 ### 3、修改user
 
 ### 4、删除user
