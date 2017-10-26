@@ -6,7 +6,7 @@
 
 ### 几个必要条件：
 
-* php的环境\(php5.6+或者php7+\)
+* php的环境\(php7+\)
 * 已经安装composer
 * 安装php的redis扩展
 * 安装php的zip扩展
