@@ -47,6 +47,8 @@ PUT /user/update
 
 #### 2.1 配置路由
 
+在 src/FrontBundle/Config/user_routes.yml 添加：
+
 ```
 user_get:
       pattern: /user/{id}
@@ -95,6 +97,58 @@ array(3) {
 ```
 
 ### 3、修改user
+
+#### 3.1 配置路由
+
+在 src/FrontBundle/Config/user_routes.yml 添加：
+
+```
+user_update:
+      pattern: /user/update
+      parameters:
+        _controller: Front@User::update
+        methods:  [PUT]
+        routeName: user_update
+```
+#### 3.2 添加方法
+
+在`UserController.php` 的类中增加方法：
+
+```
+    public function updateAction(Request $request)
+    {
+        $data = $request->request->all();
+        $updateUser = [];
+        if (!empty($id = $data['id']) && !empty($userName = $data['name'])) {
+            $updateUser['username'] = $userName;
+            $result = $this->getUserService()->updateUser($id, $updateUser);
+            var_dump($result);
+        }
+
+    }
+```
+#### 3.3 测试API
+
+```
+➜  tastphp-docs-demo git:(master) ✗ http -f PUT http://tastphp-doc-demo.dev/user/update {id=1,name='tastphp_user_001'}
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 26 Oct 2017 06:12:50 GMT
+Server: nginx/1.12.0
+Transfer-Encoding: chunked
+X-Powered-By: PHP/7.1.10
+
+array(3) {
+  ["id"]=>
+  string(1) "1"
+  ["username"]=>
+  string(16) "tastphp_user_001"
+  ["password"]=>
+  string(60) "$2y$10$vo/YQTbO/oHmedoDac2NHOnbvBRjITxI3kXPbEvoEn0hFhdIa/yxK"
+}
+```
 
 ### 4、删除user
 
