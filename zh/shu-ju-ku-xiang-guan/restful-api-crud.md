@@ -152,6 +152,52 @@ array(3) {
 
 ### 4、删除user
 
+#### 4.1 配置路由
+
+在 src/FrontBundle/Config/user_routes.yml 添加：
+
+```
+user_delete:
+      pattern: /user/delete
+      parameters:
+        _controller: Front@User::delete
+        methods:  [DELETE]
+        routeName: user_delete
+```
+
+#### 4.2 添加方法
+
+在`UserController.php` 的类中增加方法：
+
+```
+
+    public function deleteAction(Request $request)
+    {
+        $id = $request->request->get('id');
+        $result = $this->getUserService()->removeUser($id);
+        var_dump($result);
+    }
+
+```
+#### 4.3 测试API
+
+```
+➜  tastphp-docs-demo git:(master) ✗ http -f DELETE http://tastphp-doc-demo.dev/user/delete id=1
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 26 Oct 2017 06:19:54 GMT
+Server: nginx/1.12.0
+Transfer-Encoding: chunked
+X-Powered-By: PHP/7.1.10
+
+int(1)
+
+```
+
+返回1，表示删除成功。
+
 更多关于REST的概念介绍：
 
 * https://zh.wikipedia.org/wiki/REST
