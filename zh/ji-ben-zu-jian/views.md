@@ -20,10 +20,12 @@ xxx.html.twig //xxx是自定义的名字，如home.html.twig
 
 ### 1、注册TwigService
 
-首页需要注册twigService到AppKernel，在`AppKernerl` 初始化的时候增加：
+首先需要注册twigService到AppKernel，在`AppKernerl` 初始化的时候增加：
+
+> 注意：版本 1.3.7之前需要手动注册，1.3.7 之后框架智能自动注册
 
 ```
-$this->registerTwigService();
+$this->registerTwigService(); 
 ```
 
 最后变成类似:
